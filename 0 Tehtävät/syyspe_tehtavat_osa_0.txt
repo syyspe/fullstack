@@ -1,0 +1,102 @@
+Tehtävät 0.1 ja 0.2: Done
+Tehtävä 0.3 muistiinpanojen sivu:
+
+https://www.websequencediagrams.com/?lz=dGl0bGUgaHR0cHM6Ly9mdWxsc3RhY2stZXhhbXBsZWFwcC5oZXJva3VhcHAuY29tL25vdGVzIGJ5IEBzeXlzcGUKCkvDpHl0dMOkasOkLT5TZWxhaW46Cm5vdGUgbGVmdCBvZiAADgcgAB8LIG5hdmlnb2kgc2l2dWxsZVxuAFQwCgBlBi0-UGFsdmVsaW46IEdFVACBGjEAgRwOAEIKTXVvZG9zdGV0YWFuIEhUTUwAgSUFLCBtaXNzw6Rcbm11a2FuYSAoaGVhZCBlbGVtZW50ABYFKVxubWFpbi5jc3MgamEgAAcFanMKAIEeCACCGgkgMjAwIE9LLABYBQCBOxIAgR0vAGsIAFYSAF8IABkJAIF3QQCBMSIAgW0IAIQBBXJpZ2gAg3oNAIQeBiBzdW9yaXR0YQCCGwkgc2NyaXB0aW4sXG5qb2thIHRla2VlAINRBSIvZGF0YS5qc29uIlxuZWxpIHNpaXMgbGF0YWEgcACDewZtZWx0YSBtdWlzdGlpbnBhbm90XG5qc29uIG11b3RvaXNlbmEuAIQfFwBVCgCDDhsAegkgbWVya2tpam9ub2VzaXR5a3NlbsOkAIVeFgCBVAg6c3PDpCBvbGV2YSB0YXBhaHR1bWFua8Okc2l0dGVsaWrDpFxubGlzw6TDpACBNw4AhHQKdW5cbmsAhmcHZW4gRE9NIHJhamFwYWludGEAgVELAIcHCzoAhTYGdmFsbWlzLCBzAIJ1BnJlbmRlcsO2AIZ5Bm4K&s=napkin
+
+
+
+title https://fullstack-exampleapp.herokuapp.com/notes by @syyspe
+
+Käyttäjä->Selain:
+note left of Selain: Käyttäjä navigoi sivulle\nhttps://fullstack-exampleapp.herokuapp.com/notes
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+note left of Palvelin: Muodostetaan HTML sivu, missä\nmukana (head elementissä)\nmain.css ja main.js
+Palvelin->Selain: 200 OK, HTML
+Selain->Palvelin:GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain:200 OK, main.css
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+Palvelin->Selain: 200 OK, main.js
+note right of Selain: Selain suorittaa main.js scriptin,\njoka tekee GET "/data.json"\neli siis lataa palvelimelta muistiinpanot\njson muotoisena.
+Selain->Palvelin: GET /data.json
+Palvelin->Selain: 200 OK, data.json merkkijonoesityksenä
+note left of Selain: main.js :ssä oleva tapahtumankäsittelijä\nlisää muistiinpanot HTML sivuun\nkäyttäen DOM rajapaintaa.
+Selain->Käyttäjä: HTML valmis, selain renderöi sivun
+
+Tehtävä 0.4 uusi muistiinpano:
+
+title https://fullstack-exampleapp.herokuapp.com/notes - Uusi muistiinpano by @syyspe
+
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgaHR0cHM6Ly9mdWxsc3RhY2stZXhhbXBsZWFwcC5oZXJva3VhcHAuY29tL25vdGVzIC0gVXVzaSBtdWlzdGlpbnBhbm8gYnkgQHN5eXNwZQoKS8OkeXR0w6Rqw6QtPlNlbGFpbjoKbm90ZSBsZWZ0IG9mIAAOByAAHwsgbmF2aWdvaSBzaXZ1bGxlXG4AaDAKAGUGLT5QYWx2ZWxpbjogR0VUAIEuMQCBHA4AQgpNdW9kb3N0ZXRhYW4gSFRNTACBJQUsIG1pc3PDpFxubXVrYW5hIChoZWFkIGVsZW1lbnQAFgUpXG5tYWluLmNzcyBqYSAABwVqcwoAgR4IAIIaCSAyMDAgT0ssAFgFAIE7EgCBHS8AawgAVhIAXwgAGQkAgXdBAIExIgCBbQgAhAEFcmlnaACDeg0AhB4GIHN1b3JpdHRhAIIbCSBzY3JpcHRpbixcbmpva2EgdGVrZWUAg1EFIi9kYXRhLmpzb24iXG5lbGkgc2lpcyBsYXRhYSBwAIN7Bm1lbHRhAIUaDXRcbmpzb24gbXVvdG9pc2VuYS4AhB8XAFUKAIMOGwB6CSBtZXJra2lqb25vZXNpdHlrc2Vuw6QAhV4WAIFUCDpzc8OkIG9sZXZhIHRhcGFodHVtYW5rw6RzaXR0ZWxpasOkXG5saXPDpMOkAIE3DgCEdAp1blxuawCGZwdlbiBET00gcmFqYXBhaW50YQCBUQsAhwcLOgCFNgZ2YWxtaXMsIHMAgnUGcmVuZGVyw7YAhnkGbgCHLhUgS2lyam8AgxsGdXVkZW4Ah3UNblxuamEgcGFpbmFhIFRhbGxldGEgLW5hcHBpYQCDYBcAhjwJbiBmb3JtAIYtCHRpIHNpc8OkbHQAgXYFYWN0aW9uIEhUVFAgUE9TVFxucHl5bm7Dtm4sIGpvbmthAIE8CACENgkAh3YTUE9TAIdcLmV3X25vdGUAh3UYAIhbCCB0AIFlBQCFLwUAggEMIGpvbm5lawCFNAZhIHZhc3RhYSAzMDIgcmVkaXJlY3QgAIkuBwCHdRIzMDIsABYIAIohFQCGJwhhYQBECgBdBXVrc2UAawcAhiAKAIoAHQCJZwwAhwYRc2FtYW5sYWluZW4AgScHAIMnB2xhdGF1cyBrdWluIHlsbMOkCgo&s=napkin
+
+Käyttäjä->Selain:
+note left of Selain: Käyttäjä navigoi sivulle\nhttps://fullstack-exampleapp.herokuapp.com/notes
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+note left of Palvelin: Muodostetaan HTML sivu, missä\nmukana (head elementissä)\nmain.css ja main.js
+Palvelin->Selain: 200 OK, HTML
+Selain->Palvelin:GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain:200 OK, main.css
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+Palvelin->Selain: 200 OK, main.js
+note right of Selain: Selain suorittaa main.js scriptin,\njoka tekee GET "/data.json"\neli siis lataa palvelimelta muistiinpanot\njson muotoisena.
+Selain->Palvelin: GET /data.json
+Palvelin->Selain: 200 OK, data.json merkkijonoesityksenä
+note left of Selain: main.js :ssä oleva tapahtumankäsittelijä\nlisää muistiinpanot HTML sivuun\nkäyttäen DOM rajapaintaa.
+Selain->Käyttäjä: HTML valmis, selain renderöi sivun
+Käyttäjä->Selain: Kirjoittaa uuden muistiinpanon\nja painaa Talleta -nappia
+note right of Selain: HTML sivun form elementti sisältää action HTTP POST\npyynnön, jonka selain suorittaa
+Selain->Palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note
+note left of Palvelin: Palvelin tallettaa muistiinpanon jonnekin,\nja vastaa 302 redirect /notes
+Palvelin->Selain: 302, /notes
+note left of Selain: Selain saa redirect vastauksen,\nja tekee GET /notes
+Selain->Palvelin: GET /notes
+note right of Selain: samanlainen /notes sivun lataus kuin yllä
+
+Tehtävä 0.5  Single page app:
+
+title https://fullstack-exampleapp.herokuapp.com/spa by @syyspe
+
+https://www.websequencediagrams.com/cgi-bin/cdraw?lz=dGl0bGUgaHR0cHM6Ly9mdWxsc3RhY2stZXhhbXBsZWFwcC5oZXJva3VhcHAuY29tL3NwYSBieSBAc3l5c3BlCgpLw6R5dHTDpGrDpC0-IFNlbGFpbjogCm5vdGUgbGVmdCBvZgANCUvDpAAkCiBuYXZpZ29pOlxuAFEuCgBfBiAtPiBQYWx2ZWxpbjogR0VUAIEXLwCBFQ4AQApNdW9kb3N0ZXRhYW4gSFRNTCBzaXZ1LCBtaXNzw6Rcbm11a2FuYSAoaGVhZCBlbGVtZW50ABYFKVxubWFpbi5jc3MgamEgc3BhLmpzCgCBGwgtPgCCFAgyMDAgT0ssAFcFAIFFBy0-AIFBCQCBGi8AaggAVhIAXwgAGQkAWhEAggIzAIE0HgCBbAcAg2cVAIMuB3N1b3JpdHRhAIIYCCwgam9rYSBzaXPDpGx0w6TDpCBqYXZhc2NyaXB0IGtvb2RpblxubXVpc3RpaW5wYW5vamVuIGxhdGFhbWlzZWVuIHNlcnZlcmlsdMOkAIFMFy9kYXRhLmpzb24AgnMbABsJIG1lcmtraWpvbm9lc2l0eWtzZW7DpACFOxYAg14GIDpzc8OkIG9sZXZhIHRhcGFodHVtYW5rw6RzaXR0ZWxpasOkXG5saXMAgVoFAIFADHQAhFcKdW5cbmsAhkUHZW4gRE9NIHJhamFwYWludGFhLgCEIAkAhmULOgCFGQZ2YWxtaXMsIHMAhhEGcmVuZGVyw7ZpAIUzBW4K&s=napkin
+
+
+Käyttäjä-> Selain: 
+note left of Selain: Käyttäjä navigoi:\nhttps://fullstack-exampleapp.herokuapp.com/spa
+Selain -> Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of Palvelin: Muodostetaan HTML sivu, missä\nmukana (head elementissä)\nmain.css ja spa.js
+Palvelin->Selain: 200 OK, HTML
+Selain->Palvelin:GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain:200 OK, main.css
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Palvelin->Selain: 200 OK, spa.js
+note left of Selain: Selain suorittaa spa.js, joka sisältää javascript koodin\nmuistiinpanojen lataamiseen serveriltä
+Selain->Palvelin: GET /data.json
+Palvelin->Selain: 200 OK, data.json merkkijonoesityksenä
+note left of Selain: spa.js :ssä oleva tapahtumankäsittelijä\nlisää muistiinpanot HTML sivuun\nkäyttäen DOM rajapaintaa.
+Selain->Käyttäjä: HTML valmis, selain renderöi sivun
+
+0.6 Uusi muistiinpano SPA:ssa
+
+https://www.websequencediagrams.com/?lz=dGl0bGUgaHR0cHM6Ly9mdWxsc3RhY2stZXhhbXBsZWFwcC5oZXJva3VhcHAuY29tL3NwYSAtIFV1c2kgbXVpc3RpaW5wYW5vIGJ5IEBzeXlzcGUKCkvDpHl0dMOkasOkLT4gU2VsYWluOiAKbm90ZSBsZWZ0IG9mAA0JACELIG5hdmlnb2k6XG4AYy4KAF0GIC0-IFBhbHZlbGluOiBHRVQAgSkvAIETDgBACk11b2Rvc3RldGFhbiBIVE1MIHNpdnUsIG1pc3PDpFxubXVrYW5hIChoZWFkIGVsZW1lbnQAFgUpXG5tYWluLmNzcyBqYSBzcGEuanMKAIEbCC0-AIISCDIwMCBPSywAVwUAgUUHLT4AgUEJAIEaLwBqCABWEgBfCAAZCQBaEQCCAjMAgTQeAIFsBwCDZRUAgy4Hc3Vvcml0dGEAghgILCBqb2thIHNpc8OkbHTDpMOkIGphdmFzY3JpcHQga29vZGluXG4AhHAMamVuIGxhdGFhbWlzZWVuIHNlcnZlcmlsdMOkAIFMFy9kYXRhLmpzb24AgnMbABsJIG1lcmtraWpvbm9lc2l0eWtzZW7DpACFORYAg14GIDpzc8OkIG9sZXZhIHRhcGFodHVtYW5rw6RzaXR0ZWxpasOkXG5saXMAgVoFAIY8DHQAhFcKdW5cbmsAhkMHZW4gRE9NIHJhamFwYWludGFhLgCEIAkAhmMLOgCFGQZ2YWxtaXMsIHMAhhEGcmVuZGVyw7ZpAIUzBW4AhxEOAIZ_CWlyam8AgwIGdXVkZW4Ah1ENblxuamEgcGFpbmFhIFRhbGxldGEgLW5hcHBpAIYvB3JpZ2gAgXUUAIM7DACBfwoAgXwMblxuam9ua2EAgSYIAIQGCgBhCABiBgB6BWV0dGFlcwCBcgsAh2YKIlBPU1QiLCAnL25ld19ub3RlX3NwYScAhz0YAIghCCB0AIFKBXRhYQCBZA4gam9ubmVraW4sAIF3BXZhc3RhYSAyMDEgY3JlYXRlZC4ADgZ1cyBvbiBqc28AhRAFb2Rvc3NhOiB7Im1lc3NhZ2UiOiIAiXIFAC4HIn0Ah3YJIACKEAsATAsAHxwAhFYcAIYkDGZ1bmN0aW9uIHRhdWx1a29uIHDDpGl2aXR0w6QAhh4GLlxuVMOkbcOkAIZLBiAAhQMIAINoEyBsaXN0YWFuAIRpCCAtPgCLKQw6IFAAVgZldHR5AIoUBQo&s=napkin
+
+title https://fullstack-exampleapp.herokuapp.com/spa - Uusi muistiinpano by @syyspe
+
+Käyttäjä-> Selain: 
+note left of Selain: Käyttäjä navigoi:\nhttps://fullstack-exampleapp.herokuapp.com/spa
+Selain -> Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note left of Palvelin: Muodostetaan HTML sivu, missä\nmukana (head elementissä)\nmain.css ja spa.js
+Palvelin->Selain: 200 OK, HTML
+Selain->Palvelin:GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain:200 OK, main.css
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+Palvelin->Selain: 200 OK, spa.js
+note left of Selain: Selain suorittaa spa.js, joka sisältää javascript koodin\nmuistiinpanojen lataamiseen serveriltä
+Selain->Palvelin: GET /data.json
+Palvelin->Selain: 200 OK, data.json merkkijonoesityksenä
+note left of Selain: spa.js :ssä oleva tapahtumankäsittelijä\nlisää muistiinpanot HTML sivuun\nkäyttäen DOM rajapaintaa.
+Selain->Käyttäjä: HTML valmis, selain renderöi sivun
+Käyttäjä->Selain: Kirjoittaa uuden muistiinpanon\nja painaa Talleta -nappia
+note right of Selain: spa.js sisältää tapahtumanäsittelijän\njonka selain suorittaa Talleta nappia painettaesa.
+Selain->Palvelin: "POST", '/new_note_spa'
+note left of Palvelin: Palvelin tallettaa muistiinpanon jonnekin,\nja vastaa 201 created. vastaus on json\nmuodossa: {"message":"note created"}
+Palvelin -> Selain: 201 created {"message":"note created"}
+note left of Selain: spa.js sisältää function taulukon päivittämiseen.\nTämä koodi lisää uuden muistiinpanon listaan.
+Selain -> Käyttäjä: Päivitetty sivu
